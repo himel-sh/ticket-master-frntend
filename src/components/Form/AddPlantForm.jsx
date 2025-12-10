@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { imageUpload } from "../../utils";
 import useAuth from "../../hooks/useAuth";
+import axios from "axios";
 
 const AddPlantForm = () => {
   const { user } = useAuth();
@@ -13,21 +14,30 @@ const AddPlantForm = () => {
   const onSubmit = async (data) => {
     const { name, description, quantity, price, category, image } = data;
     const imageFile = image[0];
-    const imageUrl = await imageUpload(imageFile);
-    const plantData = {
-      image: imageUrl,
-      name,
-      description,
-      quantity: Number(quantity),
-      price: Number(price),
-      category,
-      seller: {
-        image: user?.photoURL,
-        name: user?.displayName,
-        email: user?.email,
-      },
-    };
-    console.table(plantData);
+
+    try {
+      const imageUrl = await imageUpload(imageFile);
+      const plantData = {
+        image: imageUrl,
+        name,
+        description,
+        quantity: Number(quantity),
+        price: Number(price),
+        category,
+        seller: {
+          image: user?.photoURL,
+          name: user?.displayName,
+          email: user?.email,
+        },
+      };
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/tickets`,
+        plantData
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
