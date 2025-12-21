@@ -5,7 +5,7 @@ import { IoBagCheckOutline } from "react-icons/io5";
 import { Link } from "react-router";
 
 const PaymentSuccess = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   useEffect(() => {
     if (sessionId) {
