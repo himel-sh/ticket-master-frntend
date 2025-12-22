@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import PlantDataRow from "../../../components/Dashboard/TableRows/PlantDataRow";
+import TicketDataRow from "../../../components/Dashboard/TableRows/TicketDataRow";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
@@ -76,7 +76,7 @@ const MyInventory = () => {
                 </thead>
                 <tbody>
                   {tickets.map((ticket) => (
-                    <PlantDataRow
+                    <TicketDataRow
                       key={ticket._id}
                       ticket={ticket}
                       refetch={refetch}

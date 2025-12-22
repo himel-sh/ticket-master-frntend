@@ -4,7 +4,7 @@ import DeleteModal from "../../Modal/DeleteModal";
 import UpdatePlantModal from "../../Modal/UpdatePlantModal";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
-const PlantDataRow = ({ ticket, refetch }) => {
+const TicketDataRow = ({ ticket, refetch }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const axiosSecure = useAxiosSecure();
@@ -98,4 +98,4 @@ const PlantDataRow = ({ ticket, refetch }) => {
   );
 };
 
-export default PlantDataRow;
+export default TicketDataRow;
