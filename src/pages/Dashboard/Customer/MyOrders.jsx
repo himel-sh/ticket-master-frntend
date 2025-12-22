@@ -1,17 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import CustomerOrderDataRow from "../../../components/Dashboard/TableRows/CustomerOrderDataRow";
-import axios from "axios";
+
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import useAuth from "../../../hooks/useAuth";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const MyOrders = () => {
   const { user } = useAuth();
-  const { data: orders = [], isLoading } = useQuery({
+  const axiosSecure = useAxiosSecure();
+  const {
+    data: orders = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["orders", user?.email],
     queryFn: async () => {
-      const result = await axios(
-        `${import.meta.env.VITE_API_URL}/my-orders/${user?.email}`
-      );
+      const result = await axiosSecure(`/my-orders`);
       return result.data;
     },
   });
@@ -74,7 +78,11 @@ const MyOrders = () => {
                 </thead>
                 <tbody>
                   {orders.map((order) => (
-                    <CustomerOrderDataRow key={order._id} order={order} />
+                    <CustomerOrderDataRow
+                      key={order._id}
+                      order={order}
+                      refetch={refetch}
+                    />
                   ))}
                 </tbody>
               </table>

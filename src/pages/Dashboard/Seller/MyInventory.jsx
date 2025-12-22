@@ -1,17 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import PlantDataRow from "../../../components/Dashboard/TableRows/PlantDataRow";
 import useAuth from "../../../hooks/useAuth";
-import axios from "axios";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 
 const MyInventory = () => {
   const { user } = useAuth();
-  const { data: tickets = [], isLoading } = useQuery({
+  const axiosSecure = useAxiosSecure();
+  const {
+    data: tickets = [],
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["inventory", user?.email],
     queryFn: async () => {
-      const result = await axios(
-        `${import.meta.env.VITE_API_URL}/my-inventory/${user?.email}`
-      );
+      const result = await axiosSecure(`/my-inventory/${user?.email}`);
       return result.data;
     },
   });
@@ -73,7 +76,11 @@ const MyInventory = () => {
                 </thead>
                 <tbody>
                   {tickets.map((ticket) => (
-                    <PlantDataRow key={ticket._id} ticket={ticket} />
+                    <PlantDataRow
+                      key={ticket._id}
+                      ticket={ticket}
+                      refetch={refetch}
+                    />
                   ))}
                 </tbody>
               </table>
