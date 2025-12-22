@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
 import { imageUpload } from "../../utils";
 import useAuth from "../../hooks/useAuth";
-import axios from "axios";
+
 import { useMutation } from "@tanstack/react-query";
 import LoadingSpinner from "../Shared/LoadingSpinner";
 import toast from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AddPlantForm = () => {
   const { user } = useAuth();
-  // useMutation hook useCase
+  const axiosSecure = useAxiosSecure();
 
   const {
     isPending,
@@ -18,10 +19,7 @@ const AddPlantForm = () => {
     reset: resetMutation,
   } = useMutation({
     mutationFn: async (payload) => {
-      return await axios.post(
-        `${import.meta.env.VITE_API_URL}/tickets`,
-        payload
-      );
+      return await axiosSecure.post(`/tickets`, payload);
     },
     onSuccess: (data) => {
       console.log(data);
