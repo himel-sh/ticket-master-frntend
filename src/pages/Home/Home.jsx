@@ -1,12 +1,14 @@
-import Plants from '../../components/Home/Plants'
+import Carousel from "../../components/Home/Carousel";
+import Tickets from "../../components/Home/Tickets";
 
 const Home = () => {
   return (
     <div>
-      <Plants />
+      <Carousel />
+      <Tickets />
       {/* More components */}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

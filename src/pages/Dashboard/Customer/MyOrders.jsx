@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import CustomerOrderDataRow from "../../../components/Dashboard/TableRows/CustomerOrderDataRow";
-
+import CustomerOrderCard from "../../../components/Dashboard/Cards/CustomerOrderCard";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -19,78 +18,28 @@ const MyOrders = () => {
       return result.data;
     },
   });
-  console.log(orders);
 
   if (isLoading) return <LoadingSpinner />;
-  return (
-    <>
-      <div className="container mx-auto px-4 sm:px-8">
-        <div className="py-8">
-          <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-            <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
-              <table className="min-w-full leading-normal">
-                <thead>
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Image
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Name
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Category
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Price
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Quantity
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Status
-                    </th>
 
-                    <th
-                      scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                    >
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {orders.map((order) => (
-                    <CustomerOrderDataRow
-                      key={order._id}
-                      order={order}
-                      refetch={refetch}
-                    />
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-3xl font-bold mb-8 text-gray-900">My Bookings</h2>
+      {orders.length === 0 ? (
+        <div className="text-center py-12">
+          <p className="text-gray-600 text-lg">No bookings yet</p>
         </div>
-      </div>
-    </>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {orders.map((order) => (
+            <CustomerOrderCard
+              key={order._id}
+              order={order}
+              refetch={refetch}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

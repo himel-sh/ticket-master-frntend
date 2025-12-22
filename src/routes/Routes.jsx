@@ -1,8 +1,10 @@
 import Home from "../pages/Home/Home";
+import AboutUs from "../pages/Home/AboutUs";
+import ContactUs from "../pages/Home/ContactUs";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import PlantDetails from "../pages/PlantDetails/PlantDetails";
+import TicketDetails from "../pages/TicketDetails/TicketDetails";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
 import AddTicket from "../pages/Dashboard/Seller/AddTicket";
@@ -18,6 +20,7 @@ import PaymentSuccess from "../pages/Payment/PaymentSuccess";
 import SellerRequests from "../pages/Dashboard/Admin/SellerRequests";
 import SellerRoute from "./SellerRoute";
 import AdminRoute from "./AdminRoute";
+import CustomerRoute from "./CustomerRoute";
 
 export const router = createBrowserRouter([
   {
@@ -30,8 +33,16 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/plant/:id",
-        element: <PlantDetails />,
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "/ticket/:id",
+        element: <TicketDetails />,
       },
       {
         path: "/payment-success",
@@ -109,7 +120,9 @@ export const router = createBrowserRouter([
         path: "my-orders",
         element: (
           <PrivateRoute>
-            <MyOrders />
+            <CustomerRoute>
+              <MyOrders />
+            </CustomerRoute>
           </PrivateRoute>
         ),
       },

@@ -4,7 +4,7 @@ const Card = ({ ticket }) => {
   const { _id, name, image, category, quantity, price } = ticket || {};
   return (
     <Link
-      to={`/plant/${_id}`}
+      to={`/ticket/${_id}`}
       className="col-span-1 cursor-pointer group shadow-xl p-3 rounded-xl"
     >
       <div className="flex flex-col gap-2 w-full">
@@ -26,7 +26,7 @@ const Card = ({ ticket }) => {
                 transition
               "
             src={image}
-            alt="Plant Image"
+            alt="Ticket Image"
           />
           <div
             className="
