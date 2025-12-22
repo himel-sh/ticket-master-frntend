@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const SellerOrderDataRow = ({ order, refetch }) => {
   let [isOpen, setIsOpen] = useState(false);
+  const [localStatus, setLocalStatus] = useState(order?.status || "pending");
   const closeModal = () => setIsOpen(false);
   const axiosSecure = useAxiosSecure();
 
@@ -25,6 +26,31 @@ const SellerOrderDataRow = ({ order, refetch }) => {
     }
   };
 
+  const handleStatusChange = async (newStatus) => {
+    try {
+      const response = await axiosSecure.patch(`/orders/${_id}`, {
+        status: newStatus,
+      });
+      if (response.status === 200) {
+        setLocalStatus(newStatus);
+        const statusMessage =
+          newStatus === "approved"
+            ? "Order approved successfully"
+            : newStatus === "rejected"
+            ? "Order rejected successfully"
+            : "Order status updated";
+        toast.success(statusMessage);
+        if (refetch) refetch();
+      } else {
+        toast.error("Failed to update order status");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Error updating order status");
+      setLocalStatus(status);
+    }
+  };
+
   return (
     <tr>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -41,20 +67,19 @@ const SellerOrderDataRow = ({ order, refetch }) => {
       </td>
 
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 ">{status}</p>
+        <p className="text-gray-900 ">{localStatus}</p>
       </td>
 
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <div className="flex items-center gap-2">
           <select
-            required
-            defaultValue={status}
-            className="p-1 border-2 border-lime-300 focus:outline-lime-500 rounded-md text-gray-900  bg-white"
-            name="category"
+            value={localStatus}
+            onChange={(e) => handleStatusChange(e.target.value)}
+            className="p-1 border-2 border-lime-300 focus:outline-lime-500 rounded-md text-gray-900 bg-white"
           >
-            <option value="Pending">Pending</option>
-            <option value="In Progress">Start Processing</option>
-            <option value="Delivered">Deliver</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
           </select>
           <button
             onClick={() => setIsOpen(true)}
