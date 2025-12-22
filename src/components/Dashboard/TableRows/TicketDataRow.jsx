@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import DeleteModal from "../../Modal/DeleteModal";
-import UpdatePlantModal from "../../Modal/UpdatePlantModal";
+import UpdateTicketModal from "../../Modal/UpdateTicketModal";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const TicketDataRow = ({ ticket, refetch }) => {
@@ -89,9 +89,11 @@ const TicketDataRow = ({ ticket, refetch }) => {
           ></span>
           <span className="relative">Update</span>
         </span>
-        <UpdatePlantModal
+        <UpdateTicketModal
           isOpen={isEditModalOpen}
           setIsEditModalOpen={setIsEditModalOpen}
+          ticket={ticket}
+          refetch={refetch}
         />
       </td>
     </tr>
