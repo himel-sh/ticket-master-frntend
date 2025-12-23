@@ -10,6 +10,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import AddTicket from "../pages/Dashboard/Seller/AddTicket";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
 import ManageTickets from "../pages/Dashboard/Admin/ManageTickets";
+import AdvertiseTickets from "../pages/Dashboard/Admin/AdvertiseTickets";
 import Profile from "../pages/Dashboard/Common/Profile";
 import Statistics from "../pages/Dashboard/Common/Statistics";
 import MainLayout from "../layouts/MainLayout";
@@ -105,6 +106,16 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <AdminRoute>
               <ManageTickets />
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "advertise-tickets",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <AdvertiseTickets />
             </AdminRoute>
           </PrivateRoute>
         ),

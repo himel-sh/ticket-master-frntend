@@ -1,4 +1,4 @@
-import { FaUserCog, FaUserTag, FaTicketAlt } from "react-icons/fa";
+import { FaUserCog, FaUserTag, FaTicketAlt, FaAd } from "react-icons/fa";
 
 import MenuItem from "./MenuItem";
 
@@ -10,6 +10,11 @@ const AdminMenu = () => {
         icon={FaTicketAlt}
         label="Manage Tickets"
         address="manage-tickets"
+      />
+      <MenuItem
+        icon={FaAd}
+        label="Advertise Tickets"
+        address="advertise-tickets"
       />
       <MenuItem
         icon={FaUserTag}
