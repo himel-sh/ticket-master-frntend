@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
 import AddTicket from "../pages/Dashboard/Seller/AddTicket";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers";
+import ManageTickets from "../pages/Dashboard/Admin/ManageTickets";
 import Profile from "../pages/Dashboard/Common/Profile";
 import Statistics from "../pages/Dashboard/Common/Statistics";
 import MainLayout from "../layouts/MainLayout";
@@ -94,6 +95,16 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <AdminRoute>
               <ManageUsers />
+            </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "manage-tickets",
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageTickets />
             </AdminRoute>
           </PrivateRoute>
         ),

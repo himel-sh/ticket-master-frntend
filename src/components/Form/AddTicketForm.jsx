@@ -23,7 +23,7 @@ const AddTicketForm = () => {
     },
     onSuccess: (data) => {
       console.log(data);
-      toast.success("Ticket added successfully");
+      toast.success("Ticket added successfully! Waiting for admin approval");
       resetMutation();
     },
     onError: (error) => {

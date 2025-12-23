@@ -15,7 +15,20 @@ const TicketDataRow = ({ ticket, refetch }) => {
   function closeModal() {
     setIsOpen(false);
   }
-  const { image, name, quantity, price, category, _id } = ticket;
+  const { image, name, quantity, price, status, _id } = ticket;
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "approved":
+        return "bg-green-100 text-green-800";
+      case "rejected":
+        return "bg-red-100 text-red-800";
+      case "pending":
+        return "bg-yellow-100 text-yellow-800";
+      default:
+        return "bg-gray-100 text-gray-800";
+    }
+  };
 
   const handleDelete = async (ticketId) => {
     try {
@@ -51,7 +64,15 @@ const TicketDataRow = ({ ticket, refetch }) => {
         <p className="text-gray-900 ">{name}</p>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <p className="text-gray-900 ">{category}</p>
+        <span
+          className={`text-xs font-semibold px-3 py-1 rounded-full ${getStatusColor(
+            status
+          )}`}
+        >
+          {status
+            ? status.charAt(0).toUpperCase() + status.slice(1)
+            : "Pending"}
+        </span>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <p className="text-gray-900 ">${price}</p>
