@@ -1,8 +1,11 @@
 import Container from "../Shared/Container";
 import Heading from "../Shared/Heading";
 import { FaBus, FaTrain } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const PopularRoutes = () => {
+  const navigate = useNavigate();
+
   const routes = [
     {
       id: 1,
@@ -60,6 +63,10 @@ const PopularRoutes = () => {
     },
   ];
 
+  const handleViewTickets = () => {
+    navigate("/all-tickets");
+  };
+
   return (
     <Container>
       <div className="py-16">
@@ -98,8 +105,11 @@ const PopularRoutes = () => {
                   </p>
                 </div>
 
-                {/* Book Button */}
-                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded transition text-sm">
+                {/* View Tickets Button */}
+                <button
+                  onClick={handleViewTickets}
+                  className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded transition text-sm"
+                >
                   View Tickets
                 </button>
               </div>
