@@ -116,7 +116,7 @@ const AddTicketForm = () => {
                 Ticket Title
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="title"
                 type="text"
                 placeholder="e.g., Dhaka to Chittagong Express"
@@ -137,7 +137,7 @@ const AddTicketForm = () => {
                 From (Location)
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="from"
                 type="text"
                 placeholder="Departure location"
@@ -158,7 +158,7 @@ const AddTicketForm = () => {
                 To (Location)
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="to"
                 type="text"
                 placeholder="Destination location"
@@ -177,7 +177,7 @@ const AddTicketForm = () => {
                 Transport Type
               </label>
               <select
-                className="w-full px-4 py-3 border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 {...register("transportType", {
                   required: "Transport type is required",
                 })}
@@ -201,7 +201,7 @@ const AddTicketForm = () => {
                 Departure Date
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="departureDate"
                 type="date"
                 {...register("departureDate", {
@@ -221,7 +221,7 @@ const AddTicketForm = () => {
                 Departure Time
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="departureTime"
                 type="time"
                 {...register("departureTime", {
@@ -245,7 +245,7 @@ const AddTicketForm = () => {
                   Price (per unit)
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                  className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                   id="price"
                   type="number"
                   placeholder="Price per ticket"
@@ -267,7 +267,7 @@ const AddTicketForm = () => {
                   Ticket Quantity
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                  className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                   id="quantity"
                   type="number"
                   placeholder="Available tickets"
@@ -296,7 +296,7 @@ const AddTicketForm = () => {
                     <input
                       type="checkbox"
                       {...register(`perk_${perk}`)}
-                      className="w-4 h-4 border-lime-300 rounded"
+                      className="w-4 h-4 border-purple-300 rounded"
                     />
                     <span className="text-gray-700">{perk}</span>
                   </label>
@@ -325,7 +325,7 @@ const AddTicketForm = () => {
                         {errors.image.message}
                       </p>
                     )}
-                    <div className="bg-lime-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-lime-600">
+                    <div className="bg-purple-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-purple-600">
                       Upload Image
                     </div>
                   </label>
@@ -358,7 +358,7 @@ const AddTicketForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full cursor-pointer p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-lime-500 hover:bg-lime-600"
+              className="w-full cursor-pointer p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-purple-500 hover:bg-purple-600"
             >
               {isPending ? (
                 <TbFidgetSpinner className="animate-spin m-auto" />

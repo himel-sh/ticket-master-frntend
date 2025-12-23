@@ -92,7 +92,7 @@ const ContactUs = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-lime-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-purple-500"
                   placeholder="Your name"
                 />
               </div>
@@ -107,7 +107,7 @@ const ContactUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-lime-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-purple-500"
                   placeholder="Your email"
                 />
               </div>
@@ -122,7 +122,7 @@ const ContactUs = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-lime-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-purple-500"
                   placeholder="Subject"
                 />
               </div>
@@ -137,14 +137,14 @@ const ContactUs = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-lime-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-purple-500"
                   placeholder="Your message"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-lime-500 text-white font-semibold py-2 rounded-md hover:bg-lime-600 transition"
+                className="w-full bg-purple-500 text-white font-semibold py-2 rounded-md hover:bg-purple-600 transition"
               >
                 Send Message
               </button>

@@ -77,7 +77,7 @@ const AdvertiseTicketDataRow = ({
           onClick={handleToggleAdvertise}
           disabled={isLoading}
           className={`relative inline-flex h-8 w-14 items-center rounded-full transition ${
-            isAdvertised ? "bg-lime-500" : "bg-gray-300"
+            isAdvertised ? "bg-purple-500" : "bg-gray-300"
           } ${isLoading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
         >
           <span

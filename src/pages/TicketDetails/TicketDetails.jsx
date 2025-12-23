@@ -74,6 +74,13 @@ const TicketDetails = () => {
       navigate("/login");
       return;
     }
+
+    // Check if user is the seller
+    if (user.email === seller?.email) {
+      toast.error("You cannot book your own ticket.");
+      return;
+    }
+
     setIsOpen(true);
   };
 
@@ -151,13 +158,13 @@ const TicketDetails = () => {
           <hr className="my-6" />
 
           {/* Countdown */}
-          <div className="bg-lime-50 border-2 border-lime-300 p-4 rounded-lg mb-6">
+          <div className="bg-purple-50 border-2 border-purple-300 p-4 rounded-lg mb-6">
             <p className="text-sm text-gray-700">
               <strong>Time until departure:</strong>
             </p>
             <p
               className={`text-2xl font-bold ${
-                isExpired ? "text-red-600" : "text-lime-600"
+                isExpired ? "text-red-600" : "text-purple-600"
               }`}
             >
               {countdown}
@@ -173,7 +180,7 @@ const TicketDetails = () => {
                   {perks.map((perk, index) => (
                     <span
                       key={index}
-                      className="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-sm"
+                      className="bg-purple-100 text-lime-800 px-3 py-1 rounded-full text-sm"
                     >
                       {perk}
                     </span>
@@ -208,13 +215,13 @@ const TicketDetails = () => {
               <span className="font-semibold text-gray-700">
                 Available Tickets:
               </span>
-              <span className="text-lg font-bold text-lime-600">
+              <span className="text-lg font-bold text-purple-600">
                 {quantity}
               </span>
             </div>
             <div className="flex justify-between items-center">
               <span className="font-bold text-2xl text-gray-700">Price:</span>
-              <span className="font-bold text-3xl text-lime-600">${price}</span>
+              <span className="font-bold text-3xl text-purple-600">${price}</span>
             </div>
           </div>
           <hr className="my-6" />
@@ -227,7 +234,7 @@ const TicketDetails = () => {
               className={`px-8 py-3 rounded-lg font-semibold text-white transition ${
                 isBookingDisabled
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-lime-500 hover:bg-lime-600"
+                  : "bg-purple-500 hover:bg-purple-600"
               }`}
             >
               {isExpired

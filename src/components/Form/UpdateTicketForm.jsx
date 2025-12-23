@@ -107,7 +107,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 Ticket Title
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="title"
                 type="text"
                 placeholder="e.g., Dhaka to Chittagong Express"
@@ -128,7 +128,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 From (Location)
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="from"
                 type="text"
                 placeholder="Departure location"
@@ -149,7 +149,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 To (Location)
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="to"
                 type="text"
                 placeholder="Destination location"
@@ -168,7 +168,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 Transport Type
               </label>
               <select
-                className="w-full px-4 py-3 border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 {...register("transportType", {
                   required: "Transport type is required",
                 })}
@@ -192,7 +192,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 Departure Date
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="departureDate"
                 type="date"
                 {...register("departureDate", {
@@ -212,7 +212,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                 Departure Time
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                 id="departureTime"
                 type="time"
                 {...register("departureTime", {
@@ -234,7 +234,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                   Price (per unit)
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                  className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                   id="price"
                   type="number"
                   placeholder="Price per ticket"
@@ -256,7 +256,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                   Ticket Quantity
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-lime-300 focus:outline-lime-500 rounded-md bg-white"
+                  className="w-full px-4 py-3 text-gray-800 border border-purple-300 focus:outline-purple-500 rounded-md bg-white"
                   id="quantity"
                   type="number"
                   placeholder="Available tickets"
@@ -286,7 +286,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                       type="checkbox"
                       defaultChecked={ticket?.perks?.includes(perk)}
                       {...register(`perk_${perk}`)}
-                      className="w-4 h-4 border-lime-300 rounded"
+                      className="w-4 h-4 border-purple-300 rounded"
                     />
                     <span className="text-gray-700">{perk}</span>
                   </label>
@@ -308,7 +308,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
                       hidden
                       {...register("image")}
                     />
-                    <div className="bg-lime-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-lime-600">
+                    <div className="bg-purple-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-purple-600">
                       Upload Image (Optional)
                     </div>
                   </label>
@@ -319,7 +319,7 @@ const UpdateTicketForm = ({ ticket, closeModal, refetch }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full cursor-pointer p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-lime-500 hover:bg-lime-600"
+              className="w-full cursor-pointer p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-purple-500 hover:bg-purple-600"
             >
               {isPending ? (
                 <TbFidgetSpinner className="animate-spin m-auto" />

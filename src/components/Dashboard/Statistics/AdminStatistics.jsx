@@ -78,7 +78,7 @@ const AdminStatistics = () => {
         <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 lg:grid-cols-4 grow">
           {/* Total Revenue Card */}
           <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-linear-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-lime-600 to-lime-400 text-white shadow-lime-500/40">
+            <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-linear-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-purple-600 to-purple-400 text-white shadow-purple-500/40">
               <FaDollarSign className="w-6 h-6 text-white" />
             </div>
             <div className="p-4 text-right">
@@ -259,9 +259,9 @@ const AdminStatistics = () => {
               Platform Summary
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="border-l-4 border-lime-500 pl-4">
+              <div className="border-l-4 border-purple-500 pl-4">
                 <p className="text-gray-600 text-sm">Average Order Value</p>
-                <p className="text-2xl font-bold text-lime-600 mt-1">
+                <p className="text-2xl font-bold text-purple-600 mt-1">
                   $
                   {totalOrders > 0
                     ? (totalRevenue / totalOrders).toFixed(2)

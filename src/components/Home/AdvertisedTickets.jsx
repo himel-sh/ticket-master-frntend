@@ -33,11 +33,11 @@ const AdvertisedTickets = () => {
           {tickets.map((ticket) => (
             <div key={ticket._id} className="relative">
               {/* Featured Badge */}
-              <div className="absolute top-2 left-2 bg-lime-500 text-white px-2 py-1 text-xs font-bold rounded z-10">
+              <div className="absolute top-2 left-2 bg-purple-500 text-white px-2 py-1 text-xs font-bold rounded z-10">
                 ⭐ FEATURED
               </div>
               {/* Card with border */}
-              <div className="border-2 h-full border-lime-300 rounded-lg overflow-hidden">
+              <div className="border-2 h-full border-purple-300 rounded-lg overflow-hidden">
                 <Card ticket={ticket} />
               </div>
             </div>

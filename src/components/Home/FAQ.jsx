@@ -49,7 +49,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="collapse collapse-arrow bg-white border border-gray-200 rounded-lg hover:border-lime-300 transition"
+              className="collapse collapse-arrow bg-white border border-gray-200 rounded-lg hover:border-purple-300 transition"
             >
               <input
                 type="radio"

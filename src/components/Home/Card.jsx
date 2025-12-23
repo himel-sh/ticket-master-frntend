@@ -69,7 +69,7 @@ const Card = ({ ticket }) => {
           </div>
           <div className="shrink-0">
             <p className="text-xs text-gray-600">Transport</p>
-            <p className="text-sm font-semibold text-lime-600 whitespace-nowrap">
+            <p className="text-sm font-semibold text-purple-600 whitespace-nowrap">
               {transportType}
             </p>
           </div>
@@ -91,7 +91,7 @@ const Card = ({ ticket }) => {
         <div className="flex justify-between items-center gap-2 py-2 border-t border-b">
           <div>
             <p className="text-xs text-gray-600">Price</p>
-            <p className="text-base font-bold text-lime-600">${price}</p>
+            <p className="text-base font-bold text-purple-600">${price}</p>
           </div>
           <div>
             <p className="text-xs text-gray-600">Available</p>
@@ -105,7 +105,7 @@ const Card = ({ ticket }) => {
             {perks.slice(0, 2).map((perk, index) => (
               <span
                 key={index}
-                className="bg-lime-100 text-lime-800 px-2 py-0.5 rounded text-xs"
+                className="bg-purple-100 text-lime-800 px-2 py-0.5 rounded text-xs"
               >
                 {perk}
               </span>
@@ -121,7 +121,7 @@ const Card = ({ ticket }) => {
         {/* See Details Button */}
         <Link
           to={`/ticket/${_id}`}
-          className="w-full bg-lime-500 hover:bg-lime-600 text-white font-semibold py-1.5 rounded transition text-center block text-sm mt-auto"
+          className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-1.5 rounded transition text-center block text-sm mt-auto"
         >
           See Details
         </Link>

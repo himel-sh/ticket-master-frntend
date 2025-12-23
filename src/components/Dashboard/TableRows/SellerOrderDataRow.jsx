@@ -75,7 +75,7 @@ const SellerOrderDataRow = ({ order, refetch }) => {
           <select
             value={localStatus}
             onChange={(e) => handleStatusChange(e.target.value)}
-            className="p-1 border-2 border-lime-300 focus:outline-lime-500 rounded-md text-gray-900 bg-white"
+            className="p-1 border-2 border-purple-300 focus:outline-purple-500 rounded-md text-gray-900 bg-white"
           >
             <option value="pending">Pending</option>
             <option value="approved">Approved</option>

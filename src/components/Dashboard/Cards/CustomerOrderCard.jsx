@@ -118,7 +118,7 @@ const CustomerOrderCard = ({ order, refetch }) => {
         {/* Countdown */}
         <div
           className={`text-sm font-semibold p-2 rounded text-center ${
-            isExpired ? "bg-red-100 text-red-700" : "bg-lime-100 text-lime-700"
+            isExpired ? "bg-red-100 text-red-700" : "bg-purple-100 text-lime-700"
           }`}
         >
           {countdown}
@@ -132,7 +132,7 @@ const CustomerOrderCard = ({ order, refetch }) => {
           </div>
           <div className="text-right">
             <p className="text-xs text-gray-600">Total Price</p>
-            <p className="text-lg font-bold text-lime-600">${price}</p>
+            <p className="text-lg font-bold text-purple-600">${price}</p>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import useAuth from "../../../hooks/useAuth";
+import useTheme from "../../../hooks/useTheme";
 // Icons
 import { GrLogout } from "react-icons/gr";
 import { FcSettings } from "react-icons/fc";
@@ -17,6 +18,7 @@ import LoadingSpinner from "../../Shared/LoadingSpinner";
 
 const Sidebar = () => {
   const { logOut } = useAuth();
+  const { isDark } = useTheme();
   const [isActive, setActive] = useState(false);
   const [role, isRoleLoading] = useRole();
   // Sidebar Responsive Handler
@@ -29,11 +31,15 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar, only visible till md breakpoint */}
-      <div className="bg-gray-100 text-gray-800 flex justify-between md:hidden">
+      <div
+        className={`flex justify-between md:hidden ${
+          isDark ? "bg-gray-800 text-gray-200" : "bg-gray-100 text-gray-800"
+        }`}
+      >
         <div>
           <div className="block cursor-pointer p-4 font-bold">
             <Link to="/">
-              <span className="text-2xl font-bold text-lime-600">
+              <span className="text-2xl font-bold text-purple-600">
                 TicketMaster
               </span>
             </Link>
@@ -42,7 +48,9 @@ const Sidebar = () => {
 
         <button
           onClick={handleToggle}
-          className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-200"
+          className={`mobile-menu-button p-4 focus:outline-none ${
+            isDark ? "focus:bg-gray-700" : "focus:bg-gray-200"
+          }`}
         >
           <AiOutlineBars className="h-5 w-5" />
         </button>
@@ -50,17 +58,23 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && "-translate-x-full"
-        }  md:translate-x-0  transition duration-200 ease-in-out`}
+        }  md:translate-x-0  transition duration-200 ease-in-out ${
+          isDark ? "bg-gray-800" : "bg-gray-100"
+        }`}
       >
         <div className="flex flex-col h-full">
           {/* Top Content */}
           <div>
             {/* Logo */}
-            <div className="w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-lime-100 mx-auto">
+            <div
+              className={`w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto ${
+                isDark ? "bg-gray-700" : "bg-purple-100"
+              }`}
+            >
               <Link to="/">
-                <span className="text-2xl font-bold text-lime-600">
+                <span className="text-2xl font-bold text-purple-600">
                   TicketMaster
                 </span>
               </Link>
@@ -86,7 +100,7 @@ const Sidebar = () => {
 
           {/* Bottom Content */}
           <div>
-            <hr />
+            <hr className={isDark ? "border-gray-700" : ""} />
 
             <MenuItem
               icon={FcSettings}
@@ -95,7 +109,11 @@ const Sidebar = () => {
             />
             <button
               onClick={logOut}
-              className="flex cursor-pointer w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
+              className={`flex cursor-pointer w-full items-center px-4 py-2 mt-5 transition-colors duration-300 transform ${
+                isDark
+                  ? "text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+                  : "text-gray-600 hover:bg-gray-300 hover:text-gray-700"
+              }`}
             >
               <GrLogout className="w-5 h-5" />
 

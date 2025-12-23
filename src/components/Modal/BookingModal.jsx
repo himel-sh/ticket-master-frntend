@@ -131,7 +131,7 @@ const BookingModal = ({ isOpen, closeModal, ticket, refetch }) => {
                         message: `Maximum ${ticket.quantity} tickets`,
                       },
                     })}
-                    className="w-full px-4 py-2 border border-lime-300 rounded-md focus:outline-lime-500"
+                    className="w-full px-4 py-2 border border-purple-300 rounded-md focus:outline-purple-500"
                   />
                   {errors.quantity && (
                     <p className="text-red-500 text-xs mt-1">
@@ -149,7 +149,7 @@ const BookingModal = ({ isOpen, closeModal, ticket, refetch }) => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-lime-500 text-white font-semibold py-2 rounded-md hover:bg-lime-600 transition disabled:opacity-50"
+                  className="w-full bg-purple-500 text-white font-semibold py-2 rounded-md hover:bg-purple-600 transition disabled:opacity-50"
                 >
                   {isLoading ? (
                     <TbFidgetSpinner className="animate-spin m-auto" />

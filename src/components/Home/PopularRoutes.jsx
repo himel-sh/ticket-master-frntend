@@ -99,7 +99,7 @@ const PopularRoutes = () => {
                 </div>
 
                 {/* Book Button */}
-                <button className="w-full bg-lime-500 hover:bg-lime-600 text-white font-semibold py-2 rounded transition text-sm">
+                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 rounded transition text-sm">
                   View Tickets
                 </button>
               </div>

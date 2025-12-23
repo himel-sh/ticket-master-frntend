@@ -97,7 +97,7 @@ const PaymentModal = ({ isOpen, closeModal, order }) => {
                 </div>
                 <div className="border-t pt-2 flex justify-between">
                   <span className="font-semibold text-gray-900">Total:</span>
-                  <span className="font-bold text-lg text-lime-600">
+                  <span className="font-bold text-lg text-purple-600">
                     ${price.toFixed(2)}
                   </span>
                 </div>
@@ -111,7 +111,7 @@ const PaymentModal = ({ isOpen, closeModal, order }) => {
                 <button
                   onClick={handlePayment}
                   disabled={isLoading}
-                  className="flex-1 bg-lime-500 text-white font-semibold py-2 rounded-md hover:bg-lime-600 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 bg-purple-500 text-white font-semibold py-2 rounded-md hover:bg-purple-600 transition disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isLoading ? (
                     <>

@@ -1,2 +1,200 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "daisyui";
+
+/* Purple Theme Colors */
+:root {
+  --primary: #9b5de0;
+  --primary-light: #d78fee;
+  --primary-lighter: #fdcffa;
+  --primary-dark: #4e56c0;
+}
+
+/* Dark mode styles */
+html.dark {
+  @apply bg-gray-950 text-gray-100;
+}
+
+html.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+html.dark .bg-white {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-50 {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-100 {
+  @apply bg-gray-800;
+}
+
+html.dark .bg-gray-200 {
+  @apply bg-gray-700;
+}
+
+html.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+html.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+html.dark .text-gray-900 {
+  @apply text-gray-100;
+}
+
+html.dark .border-gray-200 {
+  @apply border-gray-700;
+}
+
+html.dark .border-gray-300 {
+  @apply border-gray-600;
+}
+
+html.dark .hover\:bg-gray-100:hover {
+  @apply bg-gray-800;
+}
+
+html.dark .hover\:bg-gray-200:hover {
+  @apply bg-gray-700;
+}
+
+html.dark .shadow-md {
+  @apply shadow-lg shadow-gray-900/50;
+}
+
+html.dark .shadow-sm {
+  @apply shadow-md shadow-gray-900/30;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  @apply bg-gray-800 text-gray-100 border-gray-600;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  @apply text-gray-500;
+}
+
+html.dark .collapse {
+  @apply bg-gray-800 border-gray-700;
+}
+
+html.dark .collapse-title {
+  @apply text-gray-100;
+}
+
+html.dark .collapse-content {
+  @apply text-gray-400;
+}
+
+html.dark .modal {
+  @apply bg-gray-900;
+}
+
+html.dark .modal-box {
+  @apply bg-gray-900 text-gray-100;
+}
+
+html.dark .btn {
+  @apply border-gray-600;
+}
+
+html.dark .btn-ghost {
+  @apply text-gray-300 hover:bg-gray-800;
+}
+
+html.dark .form-control label {
+  @apply text-gray-300;
+}
+
+html.dark .divider {
+  @apply border-gray-700;
+}
+
+html.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+html.dark .table {
+  @apply text-gray-100;
+}
+
+html.dark .table tbody tr {
+  @apply border-gray-700;
+}
+
+html.dark .table tbody tr:hover {
+  @apply bg-gray-800;
+}
+
+html.dark .badge {
+  @apply bg-gray-700 text-gray-100;
+}
+
+html.dark .alert {
+  @apply bg-gray-800 border-gray-700 text-gray-100;
+}
+
+html.dark .dropdown-content {
+  @apply bg-gray-800 border-gray-700;
+}
+
+html.dark .menu li > * {
+  @apply text-gray-300;
+}
+
+html.dark .menu li > *:hover {
+  @apply bg-gray-700 text-gray-100;
+}
+
+html.dark .pagination button {
+  @apply border-gray-600;
+}
+
+html.dark .pagination button.active {
+  @apply bg-purple-600 text-white;
+}
+
+/* Purple theme accent colors */
+.text-primary {
+  @apply text-purple-600;
+}
+
+.bg-primary {
+  @apply bg-purple-600;
+}
+
+.border-primary {
+  @apply border-purple-600;
+}
+
+.hover\:text-primary:hover {
+  @apply text-purple-700;
+}
+
+.hover\:bg-primary:hover {
+  @apply bg-purple-700;
+}
+
+.focus\:ring-primary:focus {
+  @apply ring-purple-600;
+}
+
+/* Accent colors */
+.text-accent {
+  @apply text-purple-400;
+}
+
+.bg-accent {
+  @apply bg-purple-400;
+}
+
+.border-accent {
+  @apply border-purple-400;
+}
