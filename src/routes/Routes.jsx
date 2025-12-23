@@ -1,6 +1,7 @@
 import Home from "../pages/Home/Home";
 import AboutUs from "../pages/Home/AboutUs";
 import ContactUs from "../pages/Home/ContactUs";
+import AllTickets from "../pages/AllTickets/AllTickets";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
@@ -41,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/all-tickets",
+        element: (
+          <PrivateRoute>
+            <AllTickets />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/ticket/:id",

@@ -28,6 +28,14 @@ const Navbar = () => {
               >
                 Home
               </Link>
+              {user && (
+                <Link
+                  to="/all-tickets"
+                  className="text-gray-700 hover:text-lime-600 font-medium transition"
+                >
+                  All Tickets
+                </Link>
+              )}
               <Link
                 to="/about-us"
                 className="text-gray-700 hover:text-lime-600 font-medium transition"
@@ -73,6 +81,14 @@ const Navbar = () => {
                     >
                       Home
                     </Link>
+                    {user && (
+                      <Link
+                        to="/all-tickets"
+                        className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"
+                      >
+                        All Tickets
+                      </Link>
+                    )}
                     <Link
                       to="/about-us"
                       className="block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold"

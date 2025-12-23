@@ -1,7 +1,7 @@
 import Carousel from "../../components/Home/Carousel";
 import AdvertisedTickets from "../../components/Home/AdvertisedTickets";
 import LatestTickets from "../../components/Home/LatestTickets";
-import Tickets from "../../components/Home/Tickets";
+import FAQ from "../../components/Home/FAQ";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Carousel />
       <AdvertisedTickets />
       <LatestTickets />
-      <Tickets />
+      <FAQ />
       {/* More components */}
     </div>
   );
