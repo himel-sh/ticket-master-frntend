@@ -1,17 +1,21 @@
 import Container from "../../components/Shared/Container";
 import Heading from "../../components/Shared/Heading";
 import BookingModal from "../../components/Modal/BookingModal";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import LoadingSpinner from "../../components/Shared/LoadingSpinner";
+import { AuthContext } from "../../providers/AuthContext";
+import toast from "react-hot-toast";
 
 const TicketDetails = () => {
   let [isOpen, setIsOpen] = useState(false);
   const [countdown, setCountdown] = useState("");
   const [isExpired, setIsExpired] = useState(false);
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const {
     data: ticket = {},
@@ -60,6 +64,17 @@ const TicketDetails = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const handleBookNow = () => {
+    if (!user) {
+      toast.error(
+        "You need to be logged in to book a ticket. Please log in first."
+      );
+      navigate("/login");
+      return;
+    }
+    setIsOpen(true);
   };
 
   if (isLoading) return <LoadingSpinner />;
@@ -207,7 +222,7 @@ const TicketDetails = () => {
           {/* Book Now Button */}
           <div className="flex justify-end">
             <button
-              onClick={() => setIsOpen(true)}
+              onClick={handleBookNow}
               disabled={isBookingDisabled}
               className={`px-8 py-3 rounded-lg font-semibold text-white transition ${
                 isBookingDisabled

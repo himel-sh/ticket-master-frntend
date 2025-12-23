@@ -66,6 +66,12 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
+        <Link
+          to="/"
+          className="mb-4 inline-flex items-center text-sm text-lime-600 hover:text-lime-700 font-medium"
+        >
+          ← Back to Home
+        </Link>
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Log In</h1>
           <p className="text-sm text-gray-400">
